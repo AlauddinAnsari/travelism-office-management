@@ -292,7 +292,7 @@ class Travelism_Plugin {
 		switch ( $page ) {
 			case $this->plugin_name:
 			case $this->plugin_name . '-dashboard':
-				do_action( 'travelism_render_dashboard' );
+				$this->render_dashboard();
 				break;
 
 			case $this->plugin_name . '-employees':
@@ -328,6 +328,18 @@ class Travelism_Plugin {
 	}
 
 	/**
+	 * Render dashboard page
+	 *
+	 * @since 1.0.0
+	 */
+	private function render_dashboard() {
+		$dashboard_file = TRAVELISM_PLUGIN_DIR . 'includes/Admin/views/dashboard.php';
+		if ( file_exists( $dashboard_file ) ) {
+			require_once $dashboard_file;
+		}
+	}
+
+	/**
 	 * Enqueue admin assets.
 	 *
 	 * @since 1.0.0
@@ -339,24 +351,79 @@ class Travelism_Plugin {
 
 		// Enqueue admin CSS
 		wp_enqueue_style(
-			$this->plugin_name . '-admin',
-			TRAVELISM_PLUGIN_URL . 'assets/css/admin.css',
+			$this->plugin_name . '-admin-main',
+			TRAVELISM_PLUGIN_URL . 'assets/css/admin-main.css',
 			array(),
 			$this->version
 		);
 
+		wp_enqueue_style(
+			$this->plugin_name . '-dashboard',
+			TRAVELISM_PLUGIN_URL . 'assets/css/dashboard.css',
+			array( $this->plugin_name . '-admin-main' ),
+			$this->version
+		);
+
+		wp_enqueue_style(
+			$this->plugin_name . '-brand',
+			TRAVELISM_PLUGIN_URL . 'assets/css/brand-style.css',
+			array(),
+			$this->version
+		);
+
+		// Enqueue Chart.js from CDN
+		wp_enqueue_script(
+			'chart-js',
+			'https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js',
+			array(),
+			'4.4.0',
+			true
+		);
+
 		// Enqueue admin JS
 		wp_enqueue_script(
-			$this->plugin_name . '-admin',
-			TRAVELISM_PLUGIN_URL . 'assets/js/admin.js',
+			$this->plugin_name . '-admin-main',
+			TRAVELISM_PLUGIN_URL . 'assets/js/admin-main.js',
 			array( 'jquery' ),
+			$this->version,
+			true
+		);
+
+		wp_enqueue_script(
+			$this->plugin_name . '-modal-handler',
+			TRAVELISM_PLUGIN_URL . 'assets/js/modal-handler.js',
+			array( 'jquery', $this->plugin_name . '-admin-main' ),
+			$this->version,
+			true
+		);
+
+		wp_enqueue_script(
+			$this->plugin_name . '-chart-manager',
+			TRAVELISM_PLUGIN_URL . 'assets/js/chart-manager.js',
+			array( 'jquery', 'chart-js' ),
+			$this->version,
+			true
+		);
+
+		wp_enqueue_script(
+			$this->plugin_name . '-dashboard',
+			TRAVELISM_PLUGIN_URL . 'assets/js/dashboard.js',
+			array( 'jquery', $this->plugin_name . '-admin-main' ),
+			$this->version,
+			true
+		);
+
+		wp_enqueue_script(
+			$this->plugin_name . '-dashboard-charts',
+			TRAVELISM_PLUGIN_URL . 'assets/js/dashboard-charts.js',
+			array( 'jquery', $this->plugin_name . '-chart-manager' ),
 			$this->version,
 			true
 		);
 
 		// Localize script
 		wp_localize_script(
-			$this->plugin_name . '-admin',
+			$this->plugin_name . '-admin-main',
 			'travelismAdmin',
 			array(
 				'nonce'       => wp_create_nonce( 'travelism_nonce' ),
@@ -437,12 +504,8 @@ class Travelism_Plugin {
 	 * @since 1.0.0
 	 */
 	private function create_plugin_tables() {
-		global $wpdb;
-
-		$charset_collate = $wpdb->get_charset_collate();
-
-		// Create tables here
-		// Example: employees table, projects table, tasks table, etc.
+		// Use database class to create tables
+		Travelism_Database::create_tables();
 
 		/**
 		 * Action fired to allow modules to create their own tables.
@@ -450,7 +513,7 @@ class Travelism_Plugin {
 		 * @param wpdb $wpdb WordPress database instance.
 		 * @since 1.0.0
 		 */
-		do_action( 'travelism_create_tables', $wpdb );
+		do_action( 'travelism_create_tables', $GLOBALS['wpdb'] );
 	}
 
 	/**

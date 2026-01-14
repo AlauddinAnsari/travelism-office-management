@@ -1,0 +1,138 @@
+# Copyright (C) 2026 Travelism Team
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Travelism Office Management 1.0.0\n"
+"Report-Msgid-Bugs-To: https://travelism.com/support\n"
+"POT-Creation-Date: 2026-01-14 10:00:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: travelism-office-management.php:10
+msgid "Comprehensive office management system for travel agencies - manage customers, services, visas, and tasks efficiently."
+msgstr ""
+
+#: includes/class-travelism-plugin.php:196
+msgid "Travelism Office"
+msgstr ""
+
+#: includes/class-travelism-plugin.php:208
+msgid "Dashboard"
+msgstr ""
+
+#: includes/class-travelism-plugin.php:218
+msgid "Customers"
+msgstr ""
+
+#: includes/class-travelism-plugin.php:228
+msgid "Services"
+msgstr ""
+
+#: includes/class-travelism-plugin.php:238
+msgid "Visas"
+msgstr ""
+
+#: includes/class-travelism-plugin.php:248
+msgid "Tasks"
+msgstr ""
+
+#: includes/class-travelism-plugin.php:258
+msgid "Analytics"
+msgstr ""
+
+#: includes/class-travelism-plugin.php:268
+msgid "Settings"
+msgstr ""
+
+#: includes/class-capabilities.php:59
+msgid "CEO"
+msgstr ""
+
+#: includes/class-capabilities.php:68
+msgid "Manager"
+msgstr ""
+
+#: includes/class-capabilities.php:77
+msgid "Employee"
+msgstr ""
+
+#: includes/Modules/Customers/class-customer-module.php:92
+msgid "A customer with this email already exists."
+msgstr ""
+
+#: includes/Modules/Customers/class-customer-module.php:120
+msgid "Failed to create customer. Please try again."
+msgstr ""
+
+#: includes/Modules/Customers/class-customer-module.php:125
+msgid "Customer %s created successfully."
+msgstr ""
+
+#: includes/Modules/Customers/class-customer-module.php:145
+msgid "Invalid customer ID."
+msgstr ""
+
+#: includes/Modules/Customers/class-customer-module.php:156
+msgid "Customer not found."
+msgstr ""
+
+#: includes/Modules/Customers/class-customer-module.php:243
+msgid "Customer updated successfully."
+msgstr ""
+
+#: includes/Modules/Customers/class-customer-module.php:308
+msgid "Failed to update customer. Please try again."
+msgstr ""
+
+#: includes/Modules/Customers/class-customer-module.php:329
+msgid "Failed to delete customer. Please try again."
+msgstr ""
+
+#: includes/Modules/Customers/class-customer-module.php:352
+msgid "Customer %s deleted successfully."
+msgstr ""
+
+#: includes/Modules/Customers/class-customer-module.php:457
+msgid "First name is required."
+msgstr ""
+
+#: includes/Modules/Customers/class-customer-module.php:461
+msgid "Last name is required."
+msgstr ""
+
+#: includes/Modules/Customers/class-customer-module.php:465
+msgid "Email is required."
+msgstr ""
+
+#: includes/Modules/Customers/class-customer-module.php:467
+msgid "Invalid email format."
+msgstr ""
+
+#: includes/Modules/Customers/class-customer-module.php:482
+msgid "Invalid phone format."
+msgstr ""
+
+#: includes/Modules/Customers/class-customer-module.php:488
+msgid "Invalid postal code format."
+msgstr ""
+
+#: includes/Modules/Customers/class-customer-module.php:496
+msgid "Invalid customer type."
+msgstr ""
+
+#: includes/Modules/Customers/class-customer-module.php:504
+msgid "Invalid status."
+msgstr ""
+
+#: includes/class-travelism-plugin.php:520
+msgid "Cloning this class is not allowed."
+msgstr ""
+
+#: includes/class-travelism-plugin.php:529
+msgid "Unserializing instances of this class is not allowed."
+msgstr ""
