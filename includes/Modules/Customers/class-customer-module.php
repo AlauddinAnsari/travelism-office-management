@@ -42,7 +42,7 @@ class Customer_Module {
 	 *
 	 * @var string
 	 */
-	private $table_prefix = 'tom_customers';
+	private $table_prefix = 'travelism_customers';
 
 	/**
 	 * Error messages

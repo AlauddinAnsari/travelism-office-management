@@ -1,0 +1,239 @@
+/**
+ * Brand Style CSS
+ * Travelism Red + White branding
+ */
+
+/* ==================== Color Scheme ==================== */
+:root {
+  /* Primary - Travelism Red */
+  --brand-red-50: #fef2f2;
+  --brand-red-100: #fee2e2;
+  --brand-red-200: #fecaca;
+  --brand-red-300: #fca5a5;
+  --brand-red-400: #f87171;
+  --brand-red-500: #ef4444;
+  --brand-red-600: #dc2626; /* Primary */
+  --brand-red-700: #b91c1c;
+  --brand-red-800: #991b1b;
+  --brand-red-900: #7f1d1d;
+  
+  /* Neutral - Grays with warmth */
+  --brand-gray-50: #fafafa;
+  --brand-gray-100: #f5f5f5;
+  --brand-gray-200: #e5e5e5;
+  --brand-gray-300: #d4d4d4;
+  --brand-gray-400: #a3a3a3;
+  --brand-gray-500: #737373;
+  --brand-gray-600: #525252;
+  --brand-gray-700: #404040;
+  --brand-gray-800: #262626;
+  --brand-gray-900: #171717;
+}
+
+/* ==================== Logo & Branding ==================== */
+.travelism-logo {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 700;
+  color: var(--brand-red-600);
+  font-size: 28px;
+  letter-spacing: -0.5px;
+}
+
+.travelism-logo-icon {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, var(--brand-red-600) 0%, var(--brand-red-700) 100%);
+  border-radius: 8px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.travelism-tagline {
+  color: var(--brand-gray-600);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* ==================== Primary Elements ==================== */
+.travelism-primary-bg {
+  background: var(--brand-red-600);
+  color: white;
+}
+
+.travelism-primary-text {
+  color: var(--brand-red-600);
+}
+
+.travelism-primary-border {
+  border-color: var(--brand-red-600);
+}
+
+/* ==================== Gradients ==================== */
+.travelism-gradient-primary {
+  background: linear-gradient(135deg, var(--brand-red-600) 0%, var(--brand-red-700) 100%);
+}
+
+.travelism-gradient-light {
+  background: linear-gradient(135deg, var(--brand-red-50) 0%, white 100%);
+}
+
+.travelism-gradient-overlay {
+  background: linear-gradient(to bottom, rgba(220, 38, 38, 0.9), rgba(185, 28, 28, 0.9));
+}
+
+/* ==================== Hover Effects ==================== */
+.travelism-hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.travelism-hover-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(220, 38, 38, 0.15);
+}
+
+.travelism-hover-glow:hover {
+  box-shadow: 0 0 20px rgba(220, 38, 38, 0.3);
+}
+
+/* ==================== Typography ==================== */
+.travelism-heading-primary {
+  color: var(--brand-red-600);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.travelism-heading-secondary {
+  color: var(--brand-gray-800);
+  font-weight: 600;
+}
+
+.travelism-text-primary {
+  color: var(--brand-gray-700);
+  line-height: 1.6;
+}
+
+.travelism-text-muted {
+  color: var(--brand-gray-500);
+}
+
+/* ==================== Icons ==================== */
+.travelism-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--brand-red-50);
+  color: var(--brand-red-600);
+}
+
+.travelism-icon-sm {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+}
+
+.travelism-icon-lg {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+}
+
+/* ==================== Shadows ==================== */
+.travelism-shadow-sm {
+  box-shadow: 0 1px 2px rgba(220, 38, 38, 0.05);
+}
+
+.travelism-shadow {
+  box-shadow: 0 4px 6px rgba(220, 38, 38, 0.1);
+}
+
+.travelism-shadow-lg {
+  box-shadow: 0 10px 15px rgba(220, 38, 38, 0.1), 0 4px 6px rgba(220, 38, 38, 0.05);
+}
+
+/* ==================== Borders ==================== */
+.travelism-border-primary {
+  border: 2px solid var(--brand-red-600);
+}
+
+.travelism-border-light {
+  border: 1px solid var(--brand-red-200);
+}
+
+.travelism-border-top-accent {
+  border-top: 4px solid var(--brand-red-600);
+}
+
+/* ==================== Accent Elements ==================== */
+.travelism-accent-bar {
+  width: 60px;
+  height: 4px;
+  background: var(--brand-red-600);
+  border-radius: 2px;
+  margin: 15px 0;
+}
+
+.travelism-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--brand-red-300), transparent);
+  margin: 30px 0;
+}
+
+/* ==================== Feature Highlights ==================== */
+.travelism-feature-box {
+  background: white;
+  border-left: 4px solid var(--brand-red-600);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.travelism-feature-box:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.15);
+}
+
+/* ==================== Status Indicators ==================== */
+.travelism-status-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.travelism-status-dot.active {
+  background: #10b981;
+}
+
+.travelism-status-dot.pending {
+  background: #f59e0b;
+}
+
+.travelism-status-dot.inactive {
+  background: #ef4444;
+}
+
+/* ==================== Custom Scrollbar ==================== */
+.travelism-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.travelism-scrollbar::-webkit-scrollbar-track {
+  background: var(--brand-gray-100);
+  border-radius: 4px;
+}
+
+.travelism-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--brand-red-300);
+  border-radius: 4px;
+}
+
+.travelism-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-red-600);
+}

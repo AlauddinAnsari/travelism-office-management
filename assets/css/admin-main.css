@@ -1,0 +1,358 @@
+/**
+ * Admin Main CSS
+ * Core admin styling for Travelism Office Management
+ */
+
+/* ==================== Variables ==================== */
+:root {
+  --travelism-primary: #dc2626;
+  --travelism-primary-dark: #b91c1c;
+  --travelism-secondary: #ffffff;
+  --travelism-text: #1f2937;
+  --travelism-text-light: #6b7280;
+  --travelism-border: #e5e7eb;
+  --travelism-bg: #f9fafb;
+  --travelism-success: #10b981;
+  --travelism-warning: #f59e0b;
+  --travelism-danger: #ef4444;
+  --travelism-info: #3b82f6;
+}
+
+/* ==================== General ==================== */
+.travelism-wrap {
+  background: var(--travelism-secondary);
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.travelism-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid var(--travelism-primary);
+}
+
+.travelism-header h1 {
+  margin: 0;
+  color: var(--travelism-text);
+  font-size: 24px;
+}
+
+/* ==================== Buttons ==================== */
+.travelism-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.travelism-btn-primary {
+  background: var(--travelism-primary);
+  color: var(--travelism-secondary);
+}
+
+.travelism-btn-primary:hover {
+  background: var(--travelism-primary-dark);
+  color: var(--travelism-secondary);
+}
+
+.travelism-btn-secondary {
+  background: var(--travelism-bg);
+  color: var(--travelism-text);
+  border: 1px solid var(--travelism-border);
+}
+
+.travelism-btn-secondary:hover {
+  background: var(--travelism-border);
+}
+
+.travelism-btn-success {
+  background: var(--travelism-success);
+  color: var(--travelism-secondary);
+}
+
+.travelism-btn-danger {
+  background: var(--travelism-danger);
+  color: var(--travelism-secondary);
+}
+
+/* ==================== Forms ==================== */
+.travelism-form {
+  max-width: 100%;
+}
+
+.travelism-form-group {
+  margin-bottom: 20px;
+}
+
+.travelism-form-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: var(--travelism-text);
+}
+
+.travelism-form-input,
+.travelism-form-select,
+.travelism-form-textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--travelism-border);
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.travelism-form-input:focus,
+.travelism-form-select:focus,
+.travelism-form-textarea:focus {
+  outline: none;
+  border-color: var(--travelism-primary);
+}
+
+.travelism-form-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* ==================== Tables ==================== */
+.travelism-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--travelism-secondary);
+  margin: 20px 0;
+}
+
+.travelism-table thead {
+  background: var(--travelism-bg);
+}
+
+.travelism-table th {
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+  color: var(--travelism-text);
+  border-bottom: 2px solid var(--travelism-border);
+}
+
+.travelism-table td {
+  padding: 12px;
+  border-bottom: 1px solid var(--travelism-border);
+}
+
+.travelism-table tbody tr:hover {
+  background: var(--travelism-bg);
+}
+
+/* ==================== Badges ==================== */
+.travelism-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.travelism-badge-success {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.travelism-badge-warning {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.travelism-badge-danger {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.travelism-badge-info {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.travelism-badge-default {
+  background: var(--travelism-bg);
+  color: var(--travelism-text-light);
+}
+
+/* ==================== Modals ==================== */
+.travelism-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+
+.travelism-modal.active {
+  display: flex;
+}
+
+.travelism-modal-content {
+  background: var(--travelism-secondary);
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.travelism-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.travelism-modal-title {
+  margin: 0;
+  font-size: 20px;
+  color: var(--travelism-text);
+}
+
+.travelism-modal-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--travelism-text-light);
+}
+
+.travelism-modal-close:hover {
+  color: var(--travelism-text);
+}
+
+.travelism-modal-body {
+  margin-bottom: 20px;
+}
+
+.travelism-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* ==================== Grid ==================== */
+.travelism-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.travelism-grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.travelism-grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.travelism-grid-4 {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* ==================== Cards ==================== */
+.travelism-card {
+  background: var(--travelism-secondary);
+  border: 1px solid var(--travelism-border);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.travelism-card-header {
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--travelism-text);
+}
+
+.travelism-card-body {
+  color: var(--travelism-text-light);
+}
+
+/* ==================== Alerts ==================== */
+.travelism-alert {
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.travelism-alert-success {
+  background: #d1fae5;
+  color: #065f46;
+  border: 1px solid #6ee7b7;
+}
+
+.travelism-alert-error {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}
+
+.travelism-alert-warning {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+}
+
+.travelism-alert-info {
+  background: #dbeafe;
+  color: #1e40af;
+  border: 1px solid #93c5fd;
+}
+
+/* ==================== Responsive ==================== */
+@media (max-width: 768px) {
+  .travelism-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .travelism-grid-2,
+  .travelism-grid-3,
+  .travelism-grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .travelism-table {
+    font-size: 12px;
+  }
+
+  .travelism-table th,
+  .travelism-table td {
+    padding: 8px;
+  }
+}
+
+/* ==================== Loading ==================== */
+.travelism-loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid var(--travelism-bg);
+  border-top-color: var(--travelism-primary);
+  border-radius: 50%;
+  animation: travelism-spin 0.6s linear infinite;
+}
+
+@keyframes travelism-spin {
+  to { transform: rotate(360deg); }
+}
