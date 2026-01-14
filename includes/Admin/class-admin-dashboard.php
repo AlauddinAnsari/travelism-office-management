@@ -29,23 +29,8 @@ class Travelism_Admin_Dashboard {
 	 * @return void
 	 */
 	public function init() {
-		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
-	}
-
-	/**
-	 * Enqueue dashboard scripts
-	 *
-	 * @since 1.0.0
-	 * @param string $hook Current admin page hook.
-	 * @return void
-	 */
-	public function enqueue_scripts( $hook ) {
-		if ( strpos( $hook, 'travelism-office-management' ) === false ) {
-			return;
-		}
-
-		// Enqueue Chart.js
-		wp_enqueue_script( 'chart-js', 'https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js', array(), '4.4.0', true );
+		// Chart.js is enqueued in the main plugin class
+		// No need to enqueue here to avoid duplication
 	}
 
 	/**
@@ -63,15 +48,15 @@ class Travelism_Admin_Dashboard {
 		$services_table = $wpdb->prefix . 'travelism_services';
 
 		return array(
-			'total_customers' => $wpdb->get_var( "SELECT COUNT(*) FROM {$customers_table}" ),
-			'active_customers' => $wpdb->get_var( "SELECT COUNT(*) FROM {$customers_table} WHERE status = 'active'" ),
-			'total_visas' => $wpdb->get_var( "SELECT COUNT(*) FROM {$visas_table}" ),
-			'pending_visas' => $wpdb->get_var( "SELECT COUNT(*) FROM {$visas_table} WHERE visa_status = 'pending'" ),
-			'approved_visas' => $wpdb->get_var( "SELECT COUNT(*) FROM {$visas_table} WHERE visa_status = 'approved'" ),
-			'total_tasks' => $wpdb->get_var( "SELECT COUNT(*) FROM {$tasks_table}" ),
-			'pending_tasks' => $wpdb->get_var( "SELECT COUNT(*) FROM {$tasks_table} WHERE task_status = 'pending'" ),
-			'completed_tasks' => $wpdb->get_var( "SELECT COUNT(*) FROM {$tasks_table} WHERE task_status = 'completed'" ),
-			'total_revenue' => $wpdb->get_var( "SELECT COALESCE(SUM(total_cost), 0) FROM {$visas_table} WHERE payment_status = 'paid'" ),
+			'total_customers' => (int) $wpdb->get_var( "SELECT COUNT(*) FROM {$customers_table}" ), // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery
+			'active_customers' => (int) $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM {$customers_table} WHERE status = %s", 'active' ) ), // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery
+			'total_visas' => (int) $wpdb->get_var( "SELECT COUNT(*) FROM {$visas_table}" ), // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery
+			'pending_visas' => (int) $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM {$visas_table} WHERE visa_status = %s", 'pending' ) ), // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery
+			'approved_visas' => (int) $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM {$visas_table} WHERE visa_status = %s", 'approved' ) ), // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery
+			'total_tasks' => (int) $wpdb->get_var( "SELECT COUNT(*) FROM {$tasks_table}" ), // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery
+			'pending_tasks' => (int) $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM {$tasks_table} WHERE task_status = %s", 'pending' ) ), // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery
+			'completed_tasks' => (int) $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM {$tasks_table} WHERE task_status = %s", 'completed' ) ), // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery
+			'total_revenue' => (float) $wpdb->get_var( $wpdb->prepare( "SELECT COALESCE(SUM(total_cost), 0) FROM {$visas_table} WHERE payment_status = %s", 'paid' ) ), // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery
 		);
 	}
 

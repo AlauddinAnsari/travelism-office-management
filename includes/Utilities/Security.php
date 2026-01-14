@@ -248,24 +248,34 @@ class Travelism_Security {
 	/**
 	 * Encrypt data
 	 *
+	 * Note: This is a placeholder implementation using base64 encoding.
+	 * For production use, implement proper encryption using wp_salt() and
+	 * a secure encryption library like sodium or openssl.
+	 *
 	 * @since 1.0.0
 	 * @param string $data Data to encrypt.
 	 * @return string Encrypted data.
 	 */
 	public static function encrypt_data( $data ) {
-		// Simple base64 encoding - for production, use proper encryption
+		// TODO: Implement proper encryption for production
+		// Example: Use sodium_crypto_secretbox() or openssl_encrypt()
 		return base64_encode( $data ); // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode
 	}
 
 	/**
 	 * Decrypt data
 	 *
+	 * Note: This is a placeholder implementation using base64 decoding.
+	 * For production use, implement proper decryption using wp_salt() and
+	 * a secure encryption library like sodium or openssl.
+	 *
 	 * @since 1.0.0
 	 * @param string $data Data to decrypt.
 	 * @return string Decrypted data.
 	 */
 	public static function decrypt_data( $data ) {
-		// Simple base64 decoding - for production, use proper decryption
+		// TODO: Implement proper decryption for production
+		// Example: Use sodium_crypto_secretbox_open() or openssl_decrypt()
 		return base64_decode( $data ); // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_decode
 	}
 
