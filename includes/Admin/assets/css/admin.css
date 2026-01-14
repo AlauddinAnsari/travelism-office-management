@@ -1,0 +1,29 @@
+/* includes/Admin/assets/css/admin.css
+ * Minimal placeholder CSS for admin views
+ */
+
+.admin-view {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 20px;
+  background: #ffffff;
+  color: #333333;
+}
+
+.admin-view h1 {
+  font-size: 1.6rem;
+  margin: 0 0 8px 0;
+  color: #2c3e50;
+}
+
+.admin-view p {
+  margin: 0;
+  color: #555555;
+}
+
+.admin-dashboard { border-left: 4px solid #3498db; padding-left: 16px; }
+.admin-customers { border-left: 4px solid #27ae60; padding-left: 16px; }
+.admin-services { border-left: 4px solid #8e44ad; padding-left: 16px; }
+.admin-visa { border-left: 4px solid #e67e22; padding-left: 16px; }
+.admin-tasks { border-left: 4px solid #f1c40f; padding-left: 16px; }
+.admin-analytics { border-left: 4px solid #16a085; padding-left: 16px; }
+.admin-settings { border-left: 4px solid #7f8c8d; padding-left: 16px; }
